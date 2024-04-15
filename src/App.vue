@@ -1,9 +1,9 @@
 <script >
-import TodoList from './components/todoList/TodoList.vue';
+import TodoList from './components/TodoList/TodoList.vue'
 
 export default{
   components: {
-    TodoList,
+    TodoList
   }
 }
 </script>
@@ -12,10 +12,8 @@ export default{
  
 
   <main>
-
+<todo-list />
   </main>
 </template>
 
-<style scoped>
 
-</style>
