@@ -19,9 +19,6 @@ export default {
     }
   },
   methods: {
-    onInput(event) {
-      this.name = event.target.value
-    },
     onClose() {
       this.$emit('close')
     },
@@ -35,9 +32,6 @@ export default {
       }
       this.$emit('taskSave', newTask)
     },
-    onTitleInput(event) {
-      this.title = event.target.value
-    }
   },
   computed: {
     isTitleValid() {

@@ -12,7 +12,7 @@
   
       <v-card-text> Created at: {{ createdAt }} </v-card-text>
   
-      <v-card-text> Due date: {{ data.date }} </v-card-text>
+      <v-card-text> Due date: {{ dataDate }} </v-card-text>
     </v-card>
   </template>
   

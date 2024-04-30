@@ -17,8 +17,7 @@ export default {
       this.isTaskModalOpen = !this.isTaskModalOpen
     },
     onTaskSave(task) {
-      console.log(task)
-      const url = 'http://localhost:3001/task'
+     const url = 'http://localhost:3001/task'
       const params = {
         method: 'POST',
         headers: {
