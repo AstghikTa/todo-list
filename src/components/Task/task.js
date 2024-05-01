@@ -10,11 +10,6 @@ export default {
         return this.data.created_at.slice(0, 10)
       },
       dataDate(){
-        // if(this.data.date ){
-        //   return this.data.date.slice(0, 10)
-        // }
-        //   return this.data.date = ''
-        // }
       return  this.data.date ?  this.data.date.slice(0, 10) : ''
       }
     }
