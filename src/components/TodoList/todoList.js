@@ -1,7 +1,7 @@
 import TaskModal from '../TaskModal/TaskModal.vue'
 import Task from '../Task/Task.vue'
 import TaskApi from '../../utils/taskApi.js'
-import { watch } from 'vue'
+
 
 const taskApi =  new TaskApi()
 
@@ -63,9 +63,9 @@ export default {
           this.findAndReplaceTask(updatedTask)
           let message;
           if (updatedTask.status === 'done') {
-            message = ('Congratulations, the task is done!')
+            message = 'Congratulations, the task is done!'
           } else {
-           message =  ('You have successfully restored the task!')
+           message = 'You have successfully restored the task!'
           }
           this.$toast.success(message)
         })
