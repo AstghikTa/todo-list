@@ -1,13 +1,14 @@
 <template>
   <template>
     <div class="pa-4 text-center">
-      <v-dialog v-model="isOpen" max-width="600">
-        <v-card prepend-icon="mdi-account" title="Add new task">
+      <v-dialog :modelValue="isOpen" @update:modalValue="onClose" max-width="600">
+        <v-card prepend-icon="mdi-account" :title="modalTitle">
           <v-card-text>
             <v-row dense>
               <v-col cols="12" sm="12">
 
                 <v-text-field
+                ref="title"
                   :class="{ invalid: !isTitleValid }"
                   label="Title*"
                   required
