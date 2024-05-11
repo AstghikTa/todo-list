@@ -1,7 +1,7 @@
 <template>
   <v-card class="mx-auto my-8" elevation="16" width="auto">
     <v-card-item>
-      <v-checkbox></v-checkbox>
+      <v-checkbox @update:modelValue="onSelect" :modelValue="isSelected"></v-checkbox>
       <v-card-title> {{ data.title }} </v-card-title>
     </v-card-item>
     <v-card-text class="description">
@@ -17,9 +17,19 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn color="success" variant="elevated">
-        <v-icon icon="mdi-check-outline" />
-      </v-btn>
+      
+      <v-btn
+      v-if="data.status === 'active'"
+      color="success"
+      variant="elevated"
+      @click="onStatusChange('done')"
+    >
+      <v-icon icon="mdi-check-outline" />
+    </v-btn>
+    <v-btn v-else color="warning" variant="elevated" @click="onStatusChange('active')">
+      <v-icon icon="mdi-check-outline" />
+    </v-btn>
+
       <v-btn color="warning" variant="elevated" @click="onEdit">
         <v-icon icon="mdi-archive-edit-outline" />
       </v-btn>
@@ -29,6 +39,7 @@
     </v-card-actions>
   </v-card>
 </template>
+
 <script src="./task.js"></script>
 
 <style scoped>

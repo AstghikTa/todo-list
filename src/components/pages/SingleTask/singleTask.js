@@ -44,9 +44,17 @@ this.isEditModalOpen = !this.isEditModalOpen
         })
     },
     onSave(updatedTask) {
-   
-      console.log('updatedTask', updatedTask)
-    
+      this.toggleLoading()
+      taskApi
+      .getSingleTask()
+      .then(() => {
+        this.task = updatedTask,
+ this.toggleTaskModal()
+      })
+      .catch(this.handleError)
+.finally(() => {
+          this.toggleLoading()
+        })
     },
     onDelete() {
       this.toggleLoading()
