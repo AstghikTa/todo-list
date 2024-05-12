@@ -8,7 +8,7 @@
     @taskSave="onSave"
    
   />
-   <v-card-item>
+   <v-card-item>v-else
       <v-card-title class="text-wrap"> {{ task.title }} </v-card-title>
     </v-card-item>
 

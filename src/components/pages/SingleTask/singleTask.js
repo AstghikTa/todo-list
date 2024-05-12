@@ -43,19 +43,37 @@ this.isEditModalOpen = !this.isEditModalOpen
           this.toggleLoading()
         })
     },
-    onSave(updatedTask) {
-      this.toggleLoading()
-      taskApi
-      .getSingleTask()
+//     onSave(updatedTask) {
+//       
+//       taskApi
+//       .getSingleTask()
+//       .then(() => {
+//         this.task = updatedTask,
+//  this.toggleTaskModal()
+//       })
+//       .catch(this.handleError)
+// .finally(() => {
+//           this.toggleLoading()
+//         })
+//     },
+
+
+onSave(editedTask) {
+  this.toggleLoading()
+  taskApi
+      .updateTask(editedTask)
       .then(() => {
-        this.task = updatedTask,
- this.toggleTaskModal()
+          this.task = editedTask,
+              this.toggleTaskModal()
+          this.$toast.success('The task has been updated successfully')
       })
       .catch(this.handleError)
-.finally(() => {
-          this.toggleLoading()
-        })
-    },
+      .finally(() => {
+               this.toggleLoading()
+      })
+},
+
+
     onDelete() {
       this.toggleLoading()
       const taskId = this.task._id
