@@ -12,6 +12,7 @@ export default {
         Task,
         ConfirmDialog
   },
+  
   data() {
     return {
       isTaskModalOpen: false,
@@ -77,25 +78,7 @@ export default {
         })
 
     },
-    // onTaskStatusChange(editedTask) {
-    //   this.toggleLoading(),
-    //   taskApi
-    //     .updateTask(editedTask)
-    //     .then((updatedTask) => {
-    //       this.findAndReplaceTask(updatedTask)
-    //       let message;
-    //       if (updatedTask.status === 'done') {
-    //         message = 'Congratulations, the task is done!'
-    //       } else {
-    //        message = 'You have successfully restored the task!'
-    //       }
-    //       this.$toast.success(message)
-    //     })
-    //     .catch(this.handleError)
-    //     .finally(() => {
-    //       this.toggleLoading()
-    //     })
-    // },
+
     onTaskSave(editedTask){
       return this.onTaskUpdate(editedTask)
       .then(() => {
@@ -119,27 +102,21 @@ export default {
     onTaskEdit(editingTask){
     this.editingTask = editingTask
     },
-//     onTaskDelete(taskId){
-//       this.toggleLoading(),
-//       taskApi
-//       .deleteTask(taskId)
-//       .then(() => {
-//  this.tasks = this.tasks.filter((t)=> t._id !== taskId)
-//         this.$toast.success('The task have been deleted successfully!')
-//       })
-//       .catch(this.handleError)
-//       .finally(() => {
-//         this.toggleLoading()
-//       })
-//     },
+
 onTaskDelete(taskId) {
+  this.toggleLoading(),
   taskApi
+ 
     .deleteTask(taskId)
     .then(() => {
       this.tasks = this.tasks.filter((t) => t._id !== taskId)
       this.$toast.success('The task have been deleted successfully!')
     })
     .catch(this.handleError)
+    .finally(() => {
+       this.toggleLoading()
+   
+       })
 },
 toggleDeleteDialog() {
   this.isDeleteDialogOpen = !this.isDeleteDialogOpen
@@ -152,7 +129,7 @@ onSelectedTasksDelete() {
   taskApi
     .deleteTasks([...this.selectedTasks])
     .then(() => {
-      this.toggleDeleteDialog()
+      
       this.tasks = this.tasks.filter((t) => !this.selectedTasks.has(t._id))
       this.selectedTasks.clear()
       this.$toast.success('The selected tasks have been deleted successfully!')
@@ -160,7 +137,9 @@ onSelectedTasksDelete() {
     .catch(this.handleError)
     .finally(() => {
       this.toggleLoading()
+      this.toggleDeleteDialog()
     })
+    
 },
 toggleTaskId(taskId) {
   if (this.selectedTasks.has(taskId)) {
