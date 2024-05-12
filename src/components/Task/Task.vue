@@ -20,13 +20,13 @@
       
       <v-btn
       v-if="data.status === 'active'"
-      color="success"
+      color="blue-darken-2"
       variant="elevated"
       @click="onStatusChange('done')"
     >
-      <v-icon icon="mdi-check-outline" />
+      <v-icon icon="mdi-reload" />
     </v-btn>
-    <v-btn v-else color="warning" variant="elevated" @click="onStatusChange('active')">
+    <v-btn v-else color="success" variant="elevated" @click="onStatusChange('active')">
       <v-icon icon="mdi-check-outline" />
     </v-btn>
 
