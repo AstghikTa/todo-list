@@ -18,4 +18,10 @@
   </template>
 </template>
 
+
+<style scoped> 
+
+
+</style>
+
 <script src="./confirmDialog.js"></script>

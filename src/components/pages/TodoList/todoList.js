@@ -63,6 +63,8 @@ export default {
           this.toggleLoading()
         })
     },
+
+    //sa//
     onTaskAdd(task) {
      this.toggleLoading(),
       taskApi
@@ -80,6 +82,7 @@ export default {
     },
 
     onTaskSave(editedTask){
+      this.toggleLoading();
       return this.onTaskUpdate(editedTask)
       .then(() => {
         this.isTaskModalOpen = false
@@ -103,6 +106,22 @@ export default {
     this.editingTask = editingTask
     },
 
+    //sa//
+
+ onTaskChecked(editedTask) {
+      this.toggleLoading();
+      taskApi
+        .updateTask(editedTask)
+        .then((updatedTask) => {
+          this.findAndReplaceTask(updatedTask);
+          let message = updatedTask.status === 'done' ? 'The task has been done!' : 'The task has been active!';
+          this.$toast.success(message);
+        })
+        .catch(this.handleError)
+        .finally(() => {
+          this.toggleLoading()
+        })
+    },
 onTaskDelete(taskId) {
   this.toggleLoading(),
   taskApi
@@ -149,6 +168,7 @@ toggleTaskId(taskId) {
   }
 },
 onStatusChange(updatedTask) {
+  this.toggleLoading(),
   this.onTaskUpdate(updatedTask)
     .then(() => {
       let message
@@ -160,6 +180,9 @@ onStatusChange(updatedTask) {
       this.$toast.success(message)
     })
     .catch(this.handleError)
+    .finally(() => {
+      this.toggleLoading()
+    })
   }
      }
 

@@ -96,11 +96,9 @@ onSave(editedTask) {
         })
     },
     handleError(error) {
-      this.toggleLoading(),
+    
       this.$toast.error(error.message)
-      .finally(() => {
-        this.toggleLoading()
-      })
+   
     }
   }
 }

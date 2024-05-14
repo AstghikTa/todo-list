@@ -1,33 +1,104 @@
 <template>
-<footer>
-    <h1> Footer</h1>
+    <v-app>
+      <v-footer  class="footerMenu">
+        <v-container>
+          <v-row>
+
+            <v-col cols="12" sm="4" class="columns">
+              <RouterLink  to="/">  
+                <img alt="to do list picture" src="../images/todo.png" height="40"> 
+              </RouterLink> 
+            </v-col>
+  
+            <v-col cols="12" sm="4" class="columns">
+              <h3> Company</h3>
+              <ul>
+                <router-link v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.path">
+                  <li>{{ menuItem.title }}</li>
+                </router-link>
+              </ul>
+            </v-col>
+
+  
+  
+            <v-col cols="12" xs="1" sm="1" md="4" lg="4" xl="4" xxl="4" class="columns">
+              <h3>Links</h3>
+              <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"> 
+                  <img alt="fb logo image"
+                  src="../images/fb.avif" height="50" class="rounded float-start"> </a>
+                </li>
+  
+                <li>  <a href="https://github.com/AstghikTa/todo-list" target="_blank">
+                  <img alt="youtube logo image"
+                  src="../images/github.jpg" height="55" width="70" class="rounded float-start">
+                </a>
+                </li>
+  
+                <li> <a href="https://www.linkedin.com/feed/" target="_blank">
+                  <img alt="youtube logo image"
+                  src="../images/LinkedIn_icon.svg.png" height="55" width="70" class="rounded float-start">
+                </a>
+                </li>
+              </ul>
+            </v-col>
 
 
-    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="./index.html">Home</a></li>
-          <li class="mb-2"><a href="./about-us.html">About</a></li>
-          <li class="mb-2"><a href="./contact-us.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2 mb-3">
-        <h5>Social sites</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="https://www.facebook.com/" target="_blank"> <img alt="fb logo image"
-                src="./images/fb.avif" height="50" class="rounded float-start"></a></li>
-          <li class="mb-2"><a href="https://www.instagram.com//" target="_blank"> <img alt="instagram logo image"
-                src="./images/insta.avif" height="50" class="rounded float-start"></a></li>
-          <li class="mb-2"><a href="https://twitter.com/?lang=ru//" target="_blank"> <img alt="twitter logo image"
-                src="./images/twiter.png" height="50" class="rounded float-start"></a></li>
-          <li class="mb-2"><a href="https://www.youtube.com/" target="_blank"> <img alt="youtube logo image"
-                src="./images/youtube.avif" height="55" width="70" class="rounded float-start"></a></li>
 
-        </ul>
-      </div>
+           
+            
 
-</footer>
+
+
+
+
+          </v-row>
+        </v-container>
+      </v-footer>
+    </v-app>
+  </template>
+  
+  
+  <style scoped>
+  .footerMenu {
+
+    background-color: #144b21;
     
-</template>
-
-<script src="./footer.js"></script>
+    justify-content: space-around;
+    padding: 2px 0;
+  }
+  
+  h3 {
+    color: white;
+  }
+  
+  .columns {
+    flex: 1;
+    padding: 0 15px;
+    text-align: start
+  }
+  
+  ul li:hover {
+    color: #e09c37;
+    padding-left: 8px;
+  }
+  
+  a:hover {
+    color: #e09c37;
+    padding-left: 8px;
+  }
+  
+  ul {
+    list-style-type: none;
+    color: white;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+  }
+  </style>
+  
+  
+  <script src="./footer.js"></script>

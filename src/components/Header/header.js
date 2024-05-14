@@ -1,4 +1,16 @@
-export default{
+// import logoPage from '@/assets/logoPage.png';
+export default {
 
-    
+    data() {
+        return {
+          
+            menuItems: [
+                { title: 'HOME', path: '/' },
+                { title: 'ABOUT  ', path: '/about' },
+                { title: 'CONTACT  ', path: '/contact-us' }
+            ]
+
+        }
+
+    }
 }

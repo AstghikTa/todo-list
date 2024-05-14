@@ -1,14 +1,14 @@
 <template>
    
 <div class="pageAbout"> 
-        <h1 class="text-h2 font-weight-black font-weight-bold text-center text-decoration-underline title text-red-lighten-1" > 
-            About   Todo   list</h1>
+    <v-card-title class="text-center text-h4 text-md-h5 text-lg-h3 mt-16 title" >About To-do lists</v-card-title>
     
-        <p class="text-center text"> This page was created by <span class="name"> Astghik Tadevsyan </span>, who is trying his skills in this field.
-          The page will help you make a scheme for the near future. It will regulate your daily life.
-          The page gives you the opportunity to add new actions, note the events, and remove unnecessary
-          ones from the page. on the page there is also an opportunity to send contact information and
-          concerns to the administration.</P>
+    <v-card-text class="text-h6 mt-5 px-5 text-center text" > Welcome to our website. We are glad that you have joined our team.
+            Our website was created to make your life easier. It is most suitable for listing daily registrations. You can modify the list at any time by specifying the execution time, completion, etc.
+            In this way, you can organize your daily routine and use your time optimally, without forgetting or missing any important meeting or activity.
+            The program was created using Java Script.
+            We will be glad for your feedback and opinion.
+    </v-card-text>
 
           <p class="text-end date text-blue-lighten-1">
             17.05.2024
@@ -24,17 +24,14 @@
 }
 
 .title{
-    font-size: 60px;
+    font-size: 120px;
+    color: black;
   
 }
-.name{
-    font-size: 40px;
-    font: bold;
-    font-style: italic;
-
-}
+ 
 .text{
-    font-size: 30px;
+    font-size: 50px;
+    color: black;
 
 }
 .date{

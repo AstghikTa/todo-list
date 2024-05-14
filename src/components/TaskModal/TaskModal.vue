@@ -1,5 +1,4 @@
 <template>
-  <template>
     <div class="pa-4 text-center">
       <v-dialog :modelValue="isOpen" @update:modalValue="onClose" max-width="600">
         <v-card prepend-icon="mdi-account" :title="modalTitle">
@@ -44,7 +43,7 @@
         </v-card>
       </v-dialog>
     </div>
-  </template>
+  
 </template>
 
 <script src="./taskModal.js"></script>
