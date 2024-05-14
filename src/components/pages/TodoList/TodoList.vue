@@ -55,24 +55,5 @@
 
 <style scoped>
 
-.delete-selected-btn {
-  position: fixed;
-  right: -156px;
-  bottom: 40px;
-}
-
-.delete-selected-btn:hover {
-  animation-name: btn-animation;
-  animation-duration: 0.8s; 
-  right: 20px;
-}
-
-@keyframes btn-animation {
-  from {
-    right: -156px;
-  }
-  to {
-    right: 50px;
-  }
-}
+@import './todoList.css';
 </style>

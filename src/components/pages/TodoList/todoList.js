@@ -123,7 +123,6 @@ export default {
 onTaskDelete(taskId) {
   this.toggleLoading(),
   taskApi
- 
     .deleteTask(taskId)
     .then(() => {
       this.tasks = this.tasks.filter((t) => t._id !== taskId)
