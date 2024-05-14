@@ -20,20 +20,18 @@
 .pageAbout{
    margin-left: 100px;
    margin-right: 100px;
-
 }
 
 .title{
     font-size: 120px;
     color: black;
-  
 }
  
 .text{
     font-size: 50px;
     color: black;
-
 }
+
 .date{
     margin-right: 80px;
     font-size: 20px;

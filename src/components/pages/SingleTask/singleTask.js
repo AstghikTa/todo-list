@@ -80,7 +80,6 @@ onSave(editedTask) {
       })
 },
 
-
     onDelete() {
       this.toggleLoading()
       const taskId = this.task._id
@@ -95,8 +94,7 @@ onSave(editedTask) {
           this.toggleLoading()
         })
     },
-    handleError(error) {
-    
+    handleError(error) { 
       this.$toast.error(error.message)
    
     }

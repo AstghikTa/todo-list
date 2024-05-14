@@ -30,7 +30,6 @@ export default {
       if(newValue){
         this.isTaskModalOpen = true
       }
-      
     },
     isTaskModalOpen(isOpen){
       if(!isOpen && this.editingTask){
@@ -64,7 +63,6 @@ export default {
         })
     },
 
-    //sa//
     onTaskAdd(task) {
      this.toggleLoading(),
       taskApi
@@ -78,7 +76,6 @@ export default {
         .finally(() => {
           this.toggleLoading()
         })
-
     },
 
     onTaskSave(editedTask){
@@ -89,6 +86,9 @@ export default {
         this.$toast.success('The task have been updated successfully!')
       })
       .catch(this.handleError)
+      .finally(() => {
+        this.toggleLoading()
+      })
   },
   onTaskUpdate(editedTask) {
     return taskApi.updateTask(editedTask).then((updatedTask) => {
@@ -105,8 +105,6 @@ export default {
     onTaskEdit(editingTask){
     this.editingTask = editingTask
     },
-
-    //sa//
 
  onTaskChecked(editedTask) {
       this.toggleLoading();
@@ -134,7 +132,6 @@ onTaskDelete(taskId) {
     .catch(this.handleError)
     .finally(() => {
        this.toggleLoading()
-   
        })
 },
 toggleDeleteDialog() {
@@ -148,7 +145,6 @@ onSelectedTasksDelete() {
   taskApi
     .deleteTasks([...this.selectedTasks])
     .then(() => {
-      
       this.tasks = this.tasks.filter((t) => !this.selectedTasks.has(t._id))
       this.selectedTasks.clear()
       this.$toast.success('The selected tasks have been deleted successfully!')
@@ -158,7 +154,6 @@ onSelectedTasksDelete() {
       this.toggleLoading()
       this.toggleDeleteDialog()
     })
-    
 },
 toggleTaskId(taskId) {
   if (this.selectedTasks.has(taskId)) {

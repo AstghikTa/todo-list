@@ -1,6 +1,5 @@
 <template>
-    <v-app>
-      <v-footer  class="footerMenu">
+ <div class="footerMenu"> 
         <v-container>
           <v-row>
 
@@ -19,8 +18,6 @@
               </ul>
             </v-col>
 
-  
-  
             <v-col cols="12" xs="1" sm="1" md="4" lg="4" xl="4" xxl="4" class="columns">
               <h3>Links</h3>
               <ul>
@@ -43,29 +40,15 @@
               </ul>
             </v-col>
 
-
-
-           
-            
-
-
-
-
-
           </v-row>
         </v-container>
-      </v-footer>
-    </v-app>
+      </div>
   </template>
   
   
   <style scoped>
   .footerMenu {
-
     background-color: #144b21;
-    
-    justify-content: space-around;
-    padding: 2px 0;
   }
   
   h3 {

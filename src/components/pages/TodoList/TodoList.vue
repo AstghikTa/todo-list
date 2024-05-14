@@ -23,7 +23,6 @@
       </v-col>
     </v-row>
   </v-container>
-
   <v-container >
     <v-row >
     
@@ -36,13 +35,11 @@
         @taskDelete="onTaskDelete(taskData._id)"
         @taskSelect="toggleTaskId(taskData._id)"
         @statusChange="onStatusChange"
-
         />
       </v-col>
    
     </v-row>
   </v-container>
-
   <v-btn
   :disabled="isDeleteSelectedBtnDisabled"
   class="delete-selected-btn"
@@ -57,16 +54,19 @@
 <script src="./todoList.js"></script>
 
 <style scoped>
+
 .delete-selected-btn {
   position: fixed;
   right: -156px;
   bottom: 40px;
 }
+
 .delete-selected-btn:hover {
   animation-name: btn-animation;
   animation-duration: 0.8s; 
   right: 20px;
 }
+
 @keyframes btn-animation {
   from {
     right: -156px;

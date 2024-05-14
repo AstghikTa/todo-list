@@ -45,6 +45,7 @@
 <script src="./task.js"></script>
 
 <style scoped>
+
 .description{
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -52,11 +53,9 @@
   text-decoration: black;
  font-size: larger;
 }
+
 .task {
 text-align: center;
-
 }
-
-
 
 </style>

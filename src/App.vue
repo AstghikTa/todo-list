@@ -16,15 +16,27 @@ export default{
 </script>
 
 <template>
-
+ <div class="wrapper">
 <Loader  v-if="isLoading" />  
 <HeaderComponent />
-<main>
+<main class="main-container">
     <RouterView />
   </main>
 
   <FooterComponent />
-
+</div>
 </template>
-
-
+ 
+<style scoped>
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-container {
+  flex: 1 0 auto;
+}
+</style>

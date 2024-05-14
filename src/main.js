@@ -2,7 +2,6 @@ import './assets/main.css'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 
-
 import 'vue-toast-notification/dist/theme-default.css'
 import { createApp } from 'vue'
 import { createVuetify } from 'vuetify'
@@ -15,9 +14,6 @@ import ToastPlugin from 'vue-toast-notification'
 import App from './App.vue'
 import { router } from './router.js'
 import { store } from './store.js'
-
-
-
 
 const vuetify = createVuetify({
   components,

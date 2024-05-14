@@ -5,7 +5,6 @@ class FormApi extends Api {
   sendForm(form) {
     return this.request('POST', '', form)
   }
-    
   }
   
   export default FormApi

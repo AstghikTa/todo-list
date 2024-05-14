@@ -22,9 +22,6 @@ entityName = 'task'
     updateTask(task) {
       return this.request('PUT', task._id, task)
     }
-    // sendForm(form){
-    //   return this.request('POST', '', body)
-    // }
   }
   
   export default TaskApi

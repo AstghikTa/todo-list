@@ -9,8 +9,6 @@ export default {
                 { title: 'ABOUT  ', path: '/about' },
                 { title: 'CONTACT  ', path: '/contact-us' }
             ]
-
         }
-
     }
 }

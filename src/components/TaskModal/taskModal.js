@@ -56,7 +56,6 @@ this.$refs.title.focus()
      
       this.$emit('taskAdd', task)
     },
-    
   },
   computed: {
     isTitleValid() {

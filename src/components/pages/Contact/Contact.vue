@@ -37,10 +37,11 @@
   </template>
   
 <style scoped>
+
 .text {
 color: black;
- 
 }
+
 </style>
 
   <script src="./contact.js"></script>
