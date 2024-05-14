@@ -23,18 +23,18 @@
               <ul>
                 <li><a href="https://www.facebook.com/" target="_blank"> 
                   <img alt="fb logo image"
-                  src="../images/fb.avif" height="50" class="rounded float-start"> </a>
+                  src="../images/fb.avif" height="50"  > </a>
                 </li>
   
                 <li>  <a href="https://github.com/AstghikTa/todo-list" target="_blank">
                   <img alt="youtube logo image"
-                  src="../images/github.jpg" height="55" width="70" class="rounded float-start">
+                  src="../images/github.jpg" height="55" width="70"  >
                 </a>
                 </li>
   
                 <li> <a href="https://www.linkedin.com/feed/" target="_blank">
                   <img alt="youtube logo image"
-                  src="../images/LinkedIn_icon.svg.png" height="55" width="70" class="rounded float-start">
+                  src="../images/LinkedIn_icon.svg.png" height="55" width="70"  >
                 </a>
                 </li>
               </ul>
@@ -63,12 +63,12 @@
   
   ul li:hover {
     color: #e09c37;
-    padding-left: 8px;
+    
   }
   
   a:hover {
     color: #e09c37;
-    padding-left: 8px;
+     
   }
   
   ul {
