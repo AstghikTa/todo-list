@@ -64,7 +64,6 @@ this.isEditModalOpen = !this.isEditModalOpen
               this.toggleLoading()
           })
   },
-
 onSave(editedTask) {
   this.toggleLoading()
   taskApi

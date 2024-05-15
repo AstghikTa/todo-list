@@ -22,6 +22,15 @@
 
     <v-card-text> Due date: {{ dueDate }} </v-card-text>
 
+    <!-- <v-btn
+    variant="elevated"
+    @click="statusChange(task)">
+    <v-icon v-if="active" color="blue-darken-2" icon="mdi-reload" />
+    <v-icon v-else color="success" icon="mdi-check-outline" />
+  </v-btn> -->
+
+
+
     <v-card-actions> 
     <v-col> 
       <v-btn
