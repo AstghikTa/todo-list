@@ -30,7 +30,7 @@ export default {
                 email: this.email,
                 message: this.message || ''   
                 }  
-
+                this.toggleLoading()
             formApi.sendForm(form)
                 .then(() => {
                     this.messageSent = { ...form }
@@ -40,6 +40,7 @@ export default {
                 })
                 .catch(this.handleError)
                 .finally(() => {
+                    this.toggleLoading()
                 })   
         },
         async validate() {

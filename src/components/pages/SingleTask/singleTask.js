@@ -44,26 +44,31 @@ this.isEditModalOpen = !this.isEditModalOpen
         })
     },
 
-    statusChange() {
-      this.task.status === 'active' ? this.task.status = 'done' : this.task.status = 'active';
-      this.toggleLoading()
-      taskApi
-          .updateTask(this.task)
-          .then(() => {
-              let message;
-              if (this.task.status === 'done') {
-                  message = 'The task is Done successfully!'
-              }
-              else {
-                  message = 'The task is restored successfully!'
-              }
-              this.$toast.success(message)
-          })
-          .catch(this.handleError)
-          .finally(() => {
-              this.toggleLoading()
-          })
-  },
+  statusChange() {
+    const editedTask = {
+        ...this.task,
+        status: this.task.status==='active' ? 'done' : 'active'
+    }
+    this.toggleLoading()
+    taskApi
+        .updateTask(editedTask)
+        .then((updatedTask) => {
+            this.task = updatedTask
+            let message;
+            if (updatedTask.status === 'done') {
+                message = 'The task is Done successfully!'
+            }
+            else {
+                message = 'The task is restored successfully!'
+            }
+            this.$toast.success(message)
+        })
+        .catch(this.handleError)
+        .finally(() => {
+            this.toggleLoading()
+        })
+},
+
 onSave(editedTask) {
   this.toggleLoading()
   taskApi
