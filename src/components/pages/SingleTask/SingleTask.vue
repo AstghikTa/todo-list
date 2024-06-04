@@ -1,6 +1,5 @@
 <template>
   <v-container>
-   
     <task-modal v-if="isEditModalOpen" :isOpen="isEditModalOpen" :editingTask="task" @close="toggleTaskModal"
       @taskSave="onSave" />
   </v-container> 
@@ -21,15 +20,6 @@
     <v-card-text> Created at: {{ createdAt }} </v-card-text>
 
     <v-card-text> Due date: {{ dueDate }} </v-card-text>
-
-    <!-- <v-btn
-    variant="elevated"
-    @click="statusChange(task)">
-    <v-icon v-if="active" color="blue-darken-2" icon="mdi-reload" />
-    <v-icon v-else color="success" icon="mdi-check-outline" />
-  </v-btn> -->
-
-
 
     <v-card-actions> 
     <v-col> 

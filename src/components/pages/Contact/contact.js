@@ -24,7 +24,6 @@ export default {
             if (!isValid) {
                 return
             }
-  
             const form = {
                 name: this.name,
                 email: this.email,

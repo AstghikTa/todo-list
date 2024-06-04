@@ -12,7 +12,7 @@ export default {
         Task,
         ConfirmDialog
   },
-  
+
   data() {
     return {
       isTaskModalOpen: false,
@@ -22,6 +22,7 @@ export default {
       isDeleteDialogOpen: false
     }
   },
+
   created() {
     this.getTasks()
   },
@@ -31,25 +32,30 @@ export default {
         this.isTaskModalOpen = true
       }
     },
+
     isTaskModalOpen(isOpen){
       if(!isOpen && this.editingTask){
         this.editingTask = null
       }
     }
   },
+
   computed: {
     isDeleteSelectedBtnDisabled() {
       return !this.selectedTasks.size
     },
+
     confirmDialogText() {
       return `You are going to delete ${this.selectedTasks.size} task(s), are you sure?`
     }
   },
+
   methods: {
     ...mapMutations(['toggleLoading']),
     toggleTaskModal() {
       this.isTaskModalOpen = !this.isTaskModalOpen
     },
+
     getTasks() {
       this.toggleLoading()
       taskApi
@@ -90,18 +96,22 @@ export default {
         this.toggleLoading()
       })
   },
+
   onTaskUpdate(editedTask) {
     return taskApi.updateTask(editedTask).then((updatedTask) => {
       this.findAndReplaceTask(updatedTask)
     })
   },
+
     findAndReplaceTask(updatedTask){
       const index = this.tasks.findIndex((t) => t._id === updatedTask._id)
       this.tasks[index] = updatedTask
     },
+
     handleError(error) {
       this.$toast.error(error.message)
     },
+
     onTaskEdit(editingTask){
     this.editingTask = editingTask
     },
@@ -120,6 +130,7 @@ export default {
           this.toggleLoading()
         })
     },
+
 onTaskDelete(taskId) {
   this.toggleLoading(),
   taskApi
@@ -133,12 +144,14 @@ onTaskDelete(taskId) {
        this.toggleLoading()
        })
 },
+
 toggleDeleteDialog() {
   this.isDeleteDialogOpen = !this.isDeleteDialogOpen
   if (!this.isDeleteDialogOpen) {
     this.selectedTasks.clear()
   }
 },
+
 onSelectedTasksDelete() {
   this.toggleLoading(),
   taskApi
@@ -154,6 +167,7 @@ onSelectedTasksDelete() {
       this.toggleDeleteDialog()
     })
 },
+
 toggleTaskId(taskId) {
   if (this.selectedTasks.has(taskId)) {
     this.selectedTasks.delete(taskId)
@@ -161,6 +175,7 @@ toggleTaskId(taskId) {
     this.selectedTasks.add(taskId)
   }
 },
+
 onStatusChange(updatedTask) {
   this.toggleLoading(),
   this.onTaskUpdate(updatedTask)
