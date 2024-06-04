@@ -1,24 +1,38 @@
 export default {
-    props: {
-      data: {
-        type: Object,
-        required: true
-      }
+  props: {
+    data: {
+      type: Object,
+      required: true
     },
-    computed: {
-      createdAt() {
-        return this.data.created_at.slice(0, 10)
-      },
-      dataDate(){
-      return  this.data.date ?  this.data.date.slice(0, 10) : '' || 'none'
-      }
+    isSelected: {
+      type: Boolean,
+      default: false
     },
-    methods: {
-      onEdit(){
-        this.$emit('taskEdit')
-      },
-      onDelete() {
-        this.$emit('taskDelete')
-      }
+  },
+  computed: {
+    createdAt() {
+      return this.data.created_at.slice(0, 10)
+    },
+    dueDate() {
+      return this.data.date?.slice(0, 10) || 'none'
     }
+  },
+  methods: {
+    onEdit() {
+      this.$emit('taskEdit')
+    },
+    onDelete() {
+      this.$emit('taskDelete')
+    },
+    onSelect() {
+      this.$emit('taskSelect')
+    },
+    onStatusChange(status){
+      const updatedTask = {
+        ...this.data,
+        status
+      }
+this.$emit('statusChange', updatedTask)
+    },
   }
+}

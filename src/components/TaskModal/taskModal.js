@@ -46,17 +46,14 @@ this.$refs.title.focus()
           task.date = ''
         }
         if(this.editingTask){
-        
         this.$emit('taskSave',  {
           ...this.editingTask,
           ...task
         })
         return
       }
-     
       this.$emit('taskAdd', task)
     },
-    
   },
   computed: {
     isTitleValid() {
